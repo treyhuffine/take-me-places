@@ -1,13 +1,10 @@
-var map, steps, destination;
-var service;
-var infowindow;
-var myplace;
-var directionsService = new google.maps.DirectionsService();
-var currentStepIndex = 0, lastInfoWindow, instructions, position;
+let map, steps, destination;
+let service;
+let infowindow;
+let myplace;
+let directionsService = new google.maps.DirectionsService();
+let currentStepIndex = 0, lastInfoWindow, instructions, position;
 
-// const interestingTypes = ['amusement_park', 'aquarium', 'art_gallery', 'bar', 'bowling_alley',
-//                           'cafe', 'casino', 'library', 'museum', 'night_club', 'park', 'restaurant', 'spa'];
-// const radiusInMeters = '1000';
 import { interestingTypes, radiusInMeters } from './constants'
 
 
