@@ -5,7 +5,9 @@ let myplace;
 let directionsService = new google.maps.DirectionsService();
 let currentStepIndex = 0, lastInfoWindow, instructions, position;
 
-import { interestingTypes, radiusInMeters } from './constants'
+import { interestingTypes, radiusInMeters } from './constants';
+import ArrayWithRand from './arrayWithRandom';
+console.log(ArrayWithRand);
 
 
 function initialize() {
@@ -25,8 +27,15 @@ function initialize() {
   });
 
   function callback(results, status) {
+    console.log(results);
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      var randomPlace = results[ Math.floor(Math.random()*results.length) ];
+      console.log(results);
+      // Array.prototype.sample = function() {
+      //   return this[Math.floor(Math.random()*results.length)];
+      // }
+      // let resultsWR = ArrayWithRand.from(results);
+      var randomPlace = ArrayWithRand.from(results).sample;
+      console.log(randomPlace);
       getDirections(randomPlace);
     }
   }
